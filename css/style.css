@@ -11,6 +11,10 @@ body
 	font-family: 'Roboto', sans-serif;
 	color: #333333;
 }
+body.lock
+{
+	overflow: hidden;
+}
 header
 {
 	width: 100%;
@@ -33,7 +37,6 @@ header:before
 .header__body
 {
 	position: relative;
-	-z-index: 10;
 	height: 80px;
 }
 .header__burger
@@ -57,6 +60,8 @@ header:before
 		display: block;
 		position: relative;
 		z-index: 3;
+		margin-right: 15px;
+		margin-left: 15px;
 	}
 	.header__logo
 	{
@@ -69,6 +74,7 @@ header:before
 		width: 100%;
 		height: 2px;
 		top: 9px;
+		transition: all 0.3s ease 0s;
 	}
 	.header__burger:before,
 	.header__burger:after
@@ -79,6 +85,7 @@ header:before
 		width: 100%;
 		height: 2px;
 		left: 0;
+		transition: all 0.3s ease 0s;
 	}
 	.header__burger:before
 	{
@@ -88,15 +95,35 @@ header:before
 	{
 		bottom: 0;
 	}
+	.header__burger.active:before
+	{
+		transform: rotate(45deg);
+		top: 9px;
+	}
+	.header__burger.active:after
+	{
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+	.header__burger.active span
+	{
+		height: 0;
+	}
 	.header__menu
 	{
 		position: fixed;
-		top: 0;
+		top: -100%;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		overflow: auto;
 		background-color: green;
 		padding: 120px 10px 20px 10px;
+		transition: all 0.3s ease 0s;
+	}
+	.header__menu.active
+	{
+		top: 0;
 	}
 	.menu
 	{
@@ -191,12 +218,10 @@ h2
 	color: black;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	-border-bottom: 2px solid #eef6c1;
 }
 p
 {
 	letter-spacing: 0.7px;
-	-font-size: 16px;
 }
 a:hover
 {
@@ -219,6 +244,7 @@ li
 img.logo
 {
 	max-width: 70px;
+	min-width: 50px;
 	width: 100%;
 	border-radius: 50%;
 	display: block;
@@ -272,6 +298,7 @@ main
 .main
 {
 	margin-top: 100px;
+	width: 100%;
 }
 .eco
 {
