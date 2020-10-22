@@ -266,11 +266,11 @@
 						<p class="form__description">We are a professional property cleaning company offering domestic and commercial cleaning services to customers across London.</p>
 						<div class="form__item">
 							<label for="formName" class="form__label">Name:</label>
-							<input id="formName" type="text" name="name" class="form__input">
+							<input id="formName" type="text" name="name" class="form__input _req">
 						</div>
 						<div class="form__item">
 							<label for="formEmail" class="form__label">Email:</label>
-							<input id="formEmail" type="text" name="email" class="form__input">
+							<input id="formEmail" type="text" name="email" class="form__input _req _email">
 						</div>
 						<div class="form__item">
 							<label for="formPhone" class="form__label">Phone:</label>
@@ -280,12 +280,24 @@
 							<label for="formMessage" class="form__label">Message:</label>
 							<textarea name="message" id="formMessage" class="form__input"></textarea>
 						</div>
-						<button type="submit" class="form__button">Send message</button>
-					</form>
-					
+						<div class="form__item">
+							<div class="form__label">Photo</div>
+							<div class="file">
+								<div class="file__item">
+									<input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
+									<div class="file__button">Choose</div>
+								</div>
+								<div id="formPreview" class="file__preview"></div>
+							</div>
+							<div class="checkbox">
+								<input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req">
+								<label for="formAgreement" class="checkbox__label"><span>I give my consent to the processing of personal data</span><a href="#"> width the terms.</a></label>
+							</div>
+							<button type="submit" class="form__button">Send message</button>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
 		<footer>
 			<script src="js/script.js"></script>
 			<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
